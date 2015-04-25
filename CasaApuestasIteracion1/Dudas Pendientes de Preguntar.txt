@@ -1,0 +1,9 @@
++ Abro este .txt para apuntar las dudas que podriamos preguntar al profesor. Algunas se que podriamos responderlas nosotros mismos, pero no las formulo para ver que creemos cada uno que deberia ser la respuesta sino para anotarlas y preguntarselas. A no ser que estemos muy de acuerdo los tres con que algo es así no la daremos por respondida hasta preguntarsela al profesor.
+
+	- En el metodo añadirPartido() cuando se quiere añadir un nuevo partido el idPartido correspondiente a ese nuevo partido lo proporciona el administrador o lo genera el sistema?
+
+
+
++ Aqui las dudas para responderlas entre nosotros.
+
+	-  En el metodo añadirPartido() xk el resultado se inicializa como 0 0 y el resultadoQuin como el que se pasa que a saber cual es?
