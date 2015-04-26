@@ -28,10 +28,8 @@ public class Partido {
 	private int resultadoL;
 	private int resultadoV;
 	private ResultadoQuiniela resultadoQuin;
-	private String fInicApuesta;
-	private String hInicApuesta;
-	private String fInicPart;
-	private String hInicPart;
+	private Date fInicApuesta;
+	private Date fInicPart;
 	
 	/**
 	 * Constructor que inicializa el partido con todos los parámetros
@@ -43,12 +41,9 @@ public class Partido {
 	 * @param resultadoV El resultado del equipo visitante
 	 * @param resultadoQuin El resultado en modo quiniela
 	 * @param fInicApuesta La fecha de inicio de la apuesta
-	 * @param hInicApuesta La hora de inicio de la apuesta
-	 * @param fInicPart La fecha de inicio del partido
-	 * @param hInicPart La hora de inicio del partido
 	 */
 	
-	public Partido(int idPartido, String equipoL, String equipoV, int resultadoL, int resultadoV, ResultadoQuiniela resultadoQuin, String fInicApuesta, String hInicApuesta, String fInicPart, String hInicPart){
+	public Partido(int idPartido, String equipoL, String equipoV, int resultadoL, int resultadoV, ResultadoQuiniela resultadoQuin, String fInicApuesta, String hInicApuesta){
 		
 		this.idPartido = idPartido;
 		this.equipoL = equipoL;
@@ -57,9 +52,7 @@ public class Partido {
 		this.resultadoV = resultadoV;
 		this.resultadoQuin = resultadoQuin;
 		this.fInicApuesta = fInicApuesta;
-		this.hInicApuesta = hInicApuesta;
 		this.fInicPart = fInicPart;
-		this.hInicPart = hInicPart;
 		
 	}
 	
@@ -199,7 +192,7 @@ public class Partido {
 	/**
 	 * @return
 	 */
-	public String getfInicApuesta() {
+	public Date getfInicApuesta() {
 		return fInicApuesta;
 	}
 
@@ -215,23 +208,7 @@ public class Partido {
 	/**
 	 * @return
 	 */
-	public String gethInicApuesta() {
-		return hInicApuesta;
-	}
-
-
-	/**
-	 * @param hInicApuesta
-	 */
-	public void sethInicApuesta(String hInicApuesta) {
-		this.hInicApuesta = hInicApuesta;
-	}
-
-
-	/**
-	 * @return
-	 */
-	public String getfInicPart() {
+	public Date getfInicPart() {
 		return fInicPart;
 	}
 
@@ -243,19 +220,4 @@ public class Partido {
 		this.fInicPart = fInicPart;
 	}
 
-
-	/**
-	 * @return
-	 */
-	public String gethInicPart() {
-		return hInicPart;
-	}
-
-
-	/**
-	 * @param hInicPart
-	 */
-	public void sethInicPart(String hInicPart) {
-		this.hInicPart = hInicPart;
-	}
 }

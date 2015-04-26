@@ -72,10 +72,8 @@ public class ControladorPartidos {
 	 * @param resultadoL El resultado del equipo local
 	 * @param resultadoV El resultado del equipo visitante
 	 * @param resultadoQuin El resultado en modo quiniela
-	 * @param fInicApuesta La fecha de inicio de la apuesta
-	 * @param hInicApuesta La hora de inicio de la apuesta
-	 * @param fInicPart La fecha de inicio del partido
-	 * @param hInicPart La hora de inicio del partido
+	 * @param fInicApuesta La fecha y hora de inicio de la apuesta
+	 * @param fInicPart La fecha y hora de inicio del partido
 	 */
 	
 //	public void modificarPartido(int idPartido, String equipoL, String equipoV, int resultadoL, int resultadoV, ResultadoQuiniela resultadoQuin, String fInicApuesta, String hInicApuesta, String fInicPart, String hInicPart, MetodoMensajeria metodo)
@@ -89,9 +87,7 @@ public class ControladorPartidos {
 			estePartido.setResultadoV(resultadoV);
 			estePartido.setResultadoQuin(resultadoQuin);
 			estePartido.setfInicApuesta(fInicApuesta);
-			estePartido.sethInicApuesta(hInicApuesta);
 			estePartido.setfInicPart(fInicPart);
-			estePartido.sethInicPart(hInicPart);
 			//estePartido.setMetodo(metodo);
 		}
 	}
@@ -106,9 +102,7 @@ public class ControladorPartidos {
 	 * @param resultadoV El resultado del equipo visitante
 	 * @param resultadoQuin El resultado en modo quiniela
 	 * @param fInicApuesta La fecha de inicio de la apuesta
-	 * @param hInicApuesta La hora de inicio de la apuesta
 	 * @param fInicPart La fecha de inicio del partido
-	 * @param hInicPart La hora de inicio del partido
 	 * @throws ExcepcionPartidos Envía una excepción si en la creación de partidos algo sale mal
 	 */
 	public void añadirPartido(int idPartido, String equipoL, String equipoV, int resultadoL, int resultadoV, ResultadoQuiniela resultadoQuin, String fInicApuesta, String hInicApuesta, String fInicPart, String hInicPart)
@@ -117,7 +111,7 @@ public class ControladorPartidos {
 		// Comprueba si ya existe un partido con ese ID
 		if (!listaPartidos.containsKey(idPartido)) {
 			// Si no existe, crea la instancia y además los resultados iniciales son 0 por defecto
-			Partido p = new Partido(idPartido, equipoL, equipoV, 0, 0, resultadoQuin, fInicApuesta, hInicApuesta, fInicPart, hInicPart);
+			Partido p = new Partido(idPartido, equipoL, equipoV, 0, 0, resultadoQuin, fInicApuesta, fInicPart);
 			// Y la colecciona
 			listaPartidos.put(idPartido, p);
 		} else {
@@ -144,6 +138,23 @@ public class ControladorPartidos {
 			 throw new ExcepcionPartidos(CausaExcepcionPartidos.ERROR_ELIMINAR, idPartido);
 		 }
 		 
+	}
+	
+	/**
+	 * @return lista de los partidos abiertos a apuestas
+	 */
+	public String verPartidosAbiertosAApuesta(){
+		private String cadenaPartidos;
+		private String temp;
+		Date fecha = new Date();
+		
+		for(Partido p : listaPartidos.values()){
+			if(fecha.before(p.getfInicPart()) && fecha.after(p.getfInicApuesta())){
+				temp = Integer.toString(p.getIdPartido());
+				cadenaPartidos.concat(temp+": "+p.getEquipoL()+" - "+p.getEquipoV()+"\n");
+			}
+		}
+		return cadenaPartidos;
 	}
 
 }

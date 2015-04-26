@@ -41,4 +41,9 @@ public class Apuesta {
 		 */
 		QUINIELA
 	}
+	public enum resultadoQuiniela{
+		GANAEQUIPOLOCAL,
+		GANAEQUIPOVISITANTE,
+		EMPATE
+	}
 }
