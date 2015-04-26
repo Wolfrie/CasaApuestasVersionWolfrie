@@ -14,22 +14,13 @@ import java.util.Locale;
 
 public class ControladorPartidos {
 	
-<<<<<<< HEAD
-
-=======
-	
->>>>>>> e6ab98b1a86b0b4fd2ddf4ed32da69a592017818
 	private Map<Integer, Partido> listaPartidos;
 	
 	/**
 	 * Constructor que inicializa las colecciones
 	 */
 	public ControladorPartidos(){
-<<<<<<< HEAD
-		
-=======
 
->>>>>>> e6ab98b1a86b0b4fd2ddf4ed32da69a592017818
 		listaPartidos = new HashMap<Integer, Partido>();
 	
 	}
@@ -141,9 +132,10 @@ public class ControladorPartidos {
 	}
 	
 	/**
+	 * Muestra partidos abiertos a apuestas
 	 * @return lista de los partidos abiertos a apuestas
 	 */
-	public String verPartidosAbiertosAApuesta(){
+	public void verPartidosAbiertosAApuesta() throws ExcepcionPartidos{
 		private String cadenaPartidos;
 		private String temp;
 		Date fecha = new Date();
@@ -154,7 +146,10 @@ public class ControladorPartidos {
 				cadenaPartidos.concat(temp+": "+p.getEquipoL()+" - "+p.getEquipoV()+"\n");
 			}
 		}
-		return cadenaPartidos;
+		if(cadenaPartidos == null){
+			throw new ExcepcionPartidos(CausaExcepcionPartidos.NO_PART_ABIERTOS_APUESTAS,0);
+		}
+		System.out.println(cadenaPartidos);
 	}
 
 }
