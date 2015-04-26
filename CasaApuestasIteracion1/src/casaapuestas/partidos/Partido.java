@@ -43,7 +43,7 @@ public class Partido {
 	 * @param fInicApuesta La fecha de inicio de la apuesta
 	 */
 	
-	public Partido(int idPartido, String equipoL, String equipoV, int resultadoL, int resultadoV, ResultadoQuiniela resultadoQuin, String fInicApuesta, String hInicApuesta){
+	public Partido(int idPartido, String equipoL, String equipoV, int resultadoL, int resultadoV, ResultadoQuiniela resultadoQuin, Date fInicApuesta, Date fInicPart){
 		
 		this.idPartido = idPartido;
 		this.equipoL = equipoL;
@@ -71,7 +71,7 @@ public class Partido {
 	 * @return la ficha completa
 	 */
 	public String verInfoCompleta() {
-		String ficha = idPartido + ": " + equipoL + " - " + equipoV + " - " + resultadoL + " - " + resultadoV + " - " + resultadoQuin + " - " + fInicApuesta + " - " + hInicApuesta + " - " + fInicPart + " - " + hInicPart;
+		String ficha = idPartido + ": " + equipoL + " - " + equipoV + " - " + resultadoL + " - " + resultadoV + " - " + resultadoQuin + " - " + fInicApuesta.toString() + " - " + fInicPart.toString();
 		return ficha;
 	}
 

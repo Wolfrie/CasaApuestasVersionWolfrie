@@ -27,14 +27,14 @@ public class CuentaCasaApuestas {
 	/**
 	 * @param saldoAAumentar es el saldo que se añade a la cuenta
 	 */
-	public void add(int saldoAAumentar){
+	public void add(float saldoAAumentar){
 		saldoCuenta = saldoCuenta + saldoAAumentar;
 	}
 	/**
 	 * @param saldoAReducir es el saldo que se quita de la cuenta
 	 * @return Devuelve true si la operación se ha realizado correctamente y false en caso contrario
 	 */
-	public boolean substract(int saldoAReducir){
+	public boolean substract(float saldoAReducir){
 		if(saldoAReducir > saldoCuenta)
 		{
 			return false;
