@@ -6,6 +6,7 @@ import casaapuestas.apuestas.Apuesta;
 import casaapuestas.partidos.CausaExcepcionPartidos;
 import casaapuestas.partidos.ExcepcionPartidos;
 import casaapuestas.partidos.Partido;
+import casaapuestas.usuarios.Jugador;
 import casaapuestas.cuentas.Cuenta;
 import casaapuestas.cuentas.CuentaCasaApuestas;
 
@@ -72,8 +73,9 @@ public class ControladorApuestas {
 		System.out.println("Introduce el resultado del equipo local:\n");
 		cantidadApostada = Float.parseFloat(user_input.next());
 		
+		Jugador esteJugador = listaJugadores.get(login);
 		//Ahora reducimos el dinero de la cuenta del jugador
-		realizarReintegro("Apuesta", cantidadApostada);
+		esteJugador.realizarReintegro("Apuesta", cantidadApostada);
 		//Y lo añadimos a la cuenta de la casa de apuestas
 		CCA.add(cantidadApostada);
 		Apuesta Apu = new Apuesta(cantidadApostada, login, opcion, rQuiniela, idPartido, null, null);

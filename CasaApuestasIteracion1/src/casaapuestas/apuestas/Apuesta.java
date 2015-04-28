@@ -13,8 +13,8 @@ public class Apuesta {
 	private float cantidadApostada;
 	private String login;
 	private int idPartido;
-	private tipoApuesta tipoApuesta;
-	private ResultadoQuiniela rQuiniela;
+	private String tApuesta;
+	private String rQuiniela;
 	private String equipoLocal;
 	private String equipoVisitante;
 	
@@ -34,7 +34,7 @@ public class Apuesta {
 		this.idPartido = idPartido;
 		this.equipoLocal = equipoLocal;
 		this.equipoVisitante = equipoVisitante;
-		this.tipoApuesta = tApuesta;
+		this.tApuesta = tApuesta;
 		this.rQuiniela = rQuiniela;
 	}
 	

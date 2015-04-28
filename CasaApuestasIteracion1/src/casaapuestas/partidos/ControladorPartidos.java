@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 import java.text.DateFormat;
-import java.util.Date;
+import java.util.Calendar;
 import java.util.Locale;
 
 public class ControladorPartidos {
@@ -68,7 +68,7 @@ public class ControladorPartidos {
 	 */
 	
 //	public void modificarPartido(int idPartido, String equipoL, String equipoV, int resultadoL, int resultadoV, ResultadoQuiniela resultadoQuin, String fInicApuesta, String hInicApuesta, String fInicPart, String hInicPart, MetodoMensajeria metodo)
-	public void modificarPartido(int idPartido, String equipoL, String equipoV, int resultadoL, int resultadoV, ResultadoQuiniela resultadoQuin, String fInicApuesta, String hInicApuesta, String fInicPart, String hInicPart){
+	public void modificarPartido(int idPartido, String equipoL, String equipoV, int resultadoL, int resultadoV, ResultadoQuiniela resultadoQuin, Calendar fInicApuesta, Calendar fInicPart){
 		
 		Partido estePartido = listaPartidos.get(idPartido);
 		if (estePartido != null) {
@@ -136,9 +136,9 @@ public class ControladorPartidos {
 	 * @return lista de los partidos abiertos a apuestas
 	 */
 	public void verPartidosAbiertosAApuesta() throws ExcepcionPartidos{
-		private String cadenaPartidos;
-		private String temp;
-		Date fecha = new Date();
+		String cadenaPartidos;
+		String temp;
+		Calendar fecha = Calendar.getInstance();
 		
 		for(Partido p : listaPartidos.values()){
 			if(fecha.before(p.getfInicPart()) && fecha.after(p.getfInicApuesta())){

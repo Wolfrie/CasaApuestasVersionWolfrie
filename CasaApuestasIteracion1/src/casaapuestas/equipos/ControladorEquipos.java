@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 import java.text.DateFormat;
-import java.util.Date;
 import java.util.Locale;
 
 
@@ -36,6 +35,10 @@ public class ControladorEquipos {
 		return listado;
 	}
 	
+	/**
+	 * @param nombre nombre el equipo
+	 * @return devuelve la información completa de dicho equipo
+	 */
 	public String mostrarEquipo(String nombre) {
 		Equipo esteEquipo = listaEquipos.get(nombre);
 		return esteEquipo.verInfoCompleta();

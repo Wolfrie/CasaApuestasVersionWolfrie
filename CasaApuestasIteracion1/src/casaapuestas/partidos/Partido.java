@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 import java.text.DateFormat;
-import java.util.Date;
+import java.util.Calendar;
 import java.util.Locale;
 
 /**
@@ -27,9 +27,9 @@ public class Partido {
 	private String equipoV;
 	private int resultadoL;
 	private int resultadoV;
-	private ResultadoQuiniela resultadoQuin;
-	private Date fInicApuesta;
-	private Date fInicPart;
+	private String resultadoQuin;
+	private Calendar fInicApuesta;
+	private Calendar fInicPart;
 	
 	/**
 	 * Constructor que inicializa el partido con todos los parámetros
@@ -43,7 +43,7 @@ public class Partido {
 	 * @param fInicApuesta La fecha de inicio de la apuesta
 	 */
 	
-	public Partido(int idPartido, String equipoL, String equipoV, int resultadoL, int resultadoV, ResultadoQuiniela resultadoQuin, Date fInicApuesta, Date fInicPart){
+	public Partido(int idPartido, String equipoL, String equipoV, int resultadoL, int resultadoV, String resultadoQuin, Calendar fInicApuesta, Calendar fInicPart){
 		
 		this.idPartido = idPartido;
 		this.equipoL = equipoL;
@@ -176,7 +176,7 @@ public class Partido {
 	/**
 	 * @return
 	 */
-	public ResultadoQuiniela getResultadoQuin() {
+	public String getResultadoQuin() {
 		return resultadoQuin;
 	}
 
@@ -184,7 +184,7 @@ public class Partido {
 	/**
 	 * @param resultadoQuin
 	 */
-	public void setResultadoQuin(ResultadoQuiniela resultadoQuin) {
+	public void setResultadoQuin(String resultadoQuin) {
 		this.resultadoQuin = resultadoQuin;
 	}
 
@@ -192,7 +192,7 @@ public class Partido {
 	/**
 	 * @return
 	 */
-	public Date getfInicApuesta() {
+	public Calendar getfInicApuesta() {
 		return fInicApuesta;
 	}
 
@@ -200,7 +200,7 @@ public class Partido {
 	/**
 	 * @param fInicApuesta
 	 */
-	public void setfInicApuesta(String fInicApuesta) {
+	public void setfInicApuesta(Calendar fInicApuesta) {
 		this.fInicApuesta = fInicApuesta;
 	}
 
@@ -208,7 +208,7 @@ public class Partido {
 	/**
 	 * @return
 	 */
-	public Date getfInicPart() {
+	public Calendar getfInicPart() {
 		return fInicPart;
 	}
 
@@ -216,7 +216,7 @@ public class Partido {
 	/**
 	 * @param fInicPart
 	 */
-	public void setfInicPart(String fInicPart) {
+	public void setfInicPart(Calendar fInicPart) {
 		this.fInicPart = fInicPart;
 	}
 
